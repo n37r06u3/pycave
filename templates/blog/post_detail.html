@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+{% block content %}
+  <h1 class="templatemo-header">{{ object.title }}</h1>
+    <article>
+  {{ object.content|safe }}
+    </article>
+{% endblock content %}
+
+

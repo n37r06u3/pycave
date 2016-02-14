@@ -1,0 +1,13 @@
+{% load article_tags %}
+
+
+{% recent_articles as recent_posts %}
+
+
+{% for article in recent_posts %}
+    <article>
+        <a href="{{ article.get_absolute_url }}"><h2>{{ article.title }}</h2></a>
+        <div>{{ article.content |truncatechars_html:100 |safe }}</div>
+        <a href="{{ article.get_absolute_url }}" class="btn btn-warning">详细内容</a>
+    </article>
+{% endfor %}

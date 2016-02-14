@@ -1,2 +1,8 @@
 # pycave
-pycave website http://pycave.com
+pycave.com django project
+
+
+
+# 部署流程
+apt-get update
+apt-get install nginx -y

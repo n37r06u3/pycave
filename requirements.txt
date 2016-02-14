@@ -1,0 +1,10 @@
+django
+djangorestframework
+django-environ
+#django-ckeditor
+pillow
+#jinja2
+#django-qiniu-storage
+#django-hashedfilenamestorage
+python-slugify
+psycopg2
