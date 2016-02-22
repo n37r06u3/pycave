@@ -16,7 +16,7 @@ class BlogPostDetailView(DetailView):
 class BlogPostListView(ListView):
     model = BlogPost
     template_name = 'blog/post_list.html'
-    paginate_by = getattr(settings, 'BLOGPOST_PAGINATE_BY', None)
+    paginate_by = getattr(settings, 'BLOGPOST_PAGINATE_BY', 20)
 
     def get_queryset(self):
         queryset = super(BlogPostListView, self).get_queryset()
