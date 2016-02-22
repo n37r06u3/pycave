@@ -1,4 +1,6 @@
+# coding=utf-8
 from django.db import models
+from django.utils import timezone
 
 
 class BlogPost(models.Model):
@@ -6,11 +8,15 @@ class BlogPost(models.Model):
     slug = models.SlugField(max_length=100, blank=True, null=True)
     content = models.TextField(blank=True, null=True)
     created = models.DateTimeField(db_index=True, auto_now_add=True)
+    modified = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey('blog.BlogCategory', blank=True, null=True)
 
     def __unicode__(self):
         return '%s' % self.title
 
+    class Meta:
+        ordering = ['-created']
+        verbose_name = u'文章'
 
     @models.permalink
     def get_absolute_url(self):
